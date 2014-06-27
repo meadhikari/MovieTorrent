@@ -29,26 +29,20 @@
     display: block;
     visibility: hidden;     
 	}
-	#logo
+	#logo .img-responsive
 	{
-	position: relative;
-    left: 30%;
-    top: 20%;
-    margin-left: -32px; /* -1 * image width / 2 */
-    margin-top: 32px;  /* -1 * image height / 2 */
-    
-    	
+	    margin: 0 auto;
 	}
 	</style>
 </head>
 <body>
-<img src="img/movies.png" height="200" width="600" id="logo" />
+<img class="img-responsive center-block" src="img/movies.png" height="200" width="600" id="logo" />
 
-	<div id="searchContainer">
+	<div id="searchContainer" class="center-block">
 		<input type="text" id="keyword" placeholder="search movies">
 		<br />
 		<img id="ajax-loader" src="img/loading.gif" height="31" width="31" alt="">
-		<table class="table table-bordered table-hover" id="table_content">
+		<table class="table table-bordered table-hover table-responsive" id="table_content">
 		</table>
 	</div>
 	<div class="modal" id="myModal">
