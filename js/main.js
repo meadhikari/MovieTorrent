@@ -1,6 +1,6 @@
 $(document).ready(function () {
        
-		var rowTemplate = "<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td>{4}</td><td>{5}</td><td>{6}</td><td>{7}</td><td>{8}</td></tr>";
+		var rowTemplate = "<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td>{4}</td><td>{5}</td><td>{6}</td><td>{7}</td><td>{8}</td><td>{9}</td></tr>";
 
 		$('#keyword').keyup(function () {
 			
@@ -23,8 +23,8 @@ $(document).ready(function () {
        					torrent_link = "<a href='"+value.TorrentUrl+"'><img src='img/download.png' title='Download Torrent link' alt='torrent link'></a>"
                                           trailer = "<a class='trailer' href='#' id="+value.MovieID+" ><img src='img/tailer.png' height='16' width='16' title='View Trailer' alt='torrent link'></a>"
                                           desc = "<a class='description' href='#' id="+value.MovieID+" ><img src='img/more.png' height='16' width='16' title='Show Description' alt='torrent link'></a>"
-       					
-       					$("#table_content").append(rowTemplate.format(name,imdb,value.MovieYear,value.Quality,value.Size,trailer,magnetic_link,torrent_link,desc))
+       					amzn = "<a target='_blank' href='http://www.amazon.com/s/ref=nb_ss_d?tag=httpmeadhgith-20&url=search-alias%3Ddvd&field-keywords="+value.MovieTitleClean+"'><img src='img/amzn.png' title='Just Buy if you can' alt='buy from amazon' height='16' width='16'></a>"
+       					$("#table_content").append(rowTemplate.format(name,imdb,value.MovieYear,value.Quality,value.Size,trailer,magnetic_link,torrent_link,amzn,desc))
        					
        				});
                                    $('#ajax-loader')[0].style.visibility="hidden";
