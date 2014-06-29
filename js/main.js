@@ -72,23 +72,23 @@ $(document).ready(function () {
               var that = this;
               $('#ajax-loader')[0].style.visibility="visible"
               $.getJSON( "http://yts.re/api/movie.json?id="+this.id ,function( data ) {
-                     $(that).attr("href",data.YoutubeTrailerUrl)
-                   $.fancybox({
-                     'padding'            : 0,
-                     'autoScale'          : false,
-                     'transitionIn'       : 'none',
-                     'transitionOut'      : 'none',
-                     'title'                     : this.title,
-                     'width'                     : 640,
-                     'height'             : 385,
-                     'href'               : that.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
-                     'type'               : 'swf',
-                     'swf'                : {
-                     'wmode'                            : 'transparent',
-                     'allowfullscreen'    : 'true'
-                     }
-                     
-              });
+                     $(that).attr("href",data.YoutubeTrailerUrl);
+                     $.fancybox({
+                            'padding'            : 0,
+                            'autoScale'          : false,
+                            'transitionIn'       : 'none',
+                            'transitionOut'      : 'none',
+                            'title'              : this.title,
+                            'width'              : ($(window).width() >= 640)?($(window).width()/2.5) : ($(window).width()/3),
+                            'height'             : ($(window).width() >= 640)?($(window).height()/1.5) : ($(window).height()/2),
+                            'href'               : that.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+                            'type'               : 'swf',
+                            'swf'                : {
+                                   'wmode'          : 'transparent',
+                                   'allowfullscreen'    : 'true'
+                            }
+              
+                     });
                    $('#ajax-loader')[0].style.visibility="hidden"
        });
               
